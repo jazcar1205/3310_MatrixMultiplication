@@ -1,9 +1,27 @@
+
 public class Classic {
 
+    /** Matrix (n × m). */
     private final int[][] matrixA;
-    private final int[][] matrixB;
-    private final int n, m, q;
 
+    /** Matrix (m × q). */
+    private final int[][] matrixB;
+
+    /** Number of rows in A. */
+    private final int n;
+
+    /** # of columns in A / rows in B. */
+    private final int m;
+
+    /** # of columns in B. */
+    private final int q;
+
+    /**
+     * Constructs a Classic multiplier for the two given matrices.
+     *
+     * @param matrixA  (n × m)
+     * @param matrixB  (m × q)
+     */
     public Classic(int[][] matrixA, int[][] matrixB) {
         this.matrixA = matrixA;
         this.matrixB = matrixB;
@@ -12,6 +30,11 @@ public class Classic {
         this.q = matrixB[0].length;
     }
 
+    /**
+     * Computes and returns the matrix product A × B.
+     *
+     * @return a new n×q matrix representing the product
+     */
     public int[][] multiply() {
         int[][] result = new int[n][q];
 
