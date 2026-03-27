@@ -1,30 +1,3 @@
-/**
- * Strassen's matrix multiplication algorithm.
- *
- * <p>Reduces the number of recursive multiplications from 8 to 7 by computing
- * seven intermediate products (P–V) and combining them:
- * <pre>
- *   P = (A11+A22) * (B11+B22)
- *   Q = (A21+A22) * B11
- *   R =  A11      * (B12-B22)
- *   S =  A22      * (B21-B11)
- *   T = (A11+A12) * B22
- *   U = (A21-A11) * (B11+B12)
- *   V = (A12-A22) * (B21+B22)
- *
- *   C11 = P + S - T + V
- *   C12 = R + T
- *   C21 = Q + S
- *   C22 = P + R - Q + U
- * </pre>
- *
- * <p>Non-power-of-2 inputs are zero-padded before recursion and trimmed afterward.
- * Recursion bottoms out at sub-matrices of size ≤ {@code THRESHOLD},
- * where the classic triple-loop is used instead.
- *
- * <p>Time complexity:  O(n^2.807) — recurrence T(n) = 7T(n/2) + O(n²).
- * <p>Space complexity: O(n² log n) due to recursive call stack and sub-matrix allocations.
- */
 public class Strassen {
 
     /** Matrix A (n × m). */
