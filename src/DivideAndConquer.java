@@ -1,21 +1,3 @@
-/**
- * Divide and Conquer matrix multiplication algorithm.
- *
- * <p>Recursively splits each input matrix into four n/2 × n/2 quadrants,
- * computes eight sub-multiplications, and combines the results:
- * <pre>
- *   C11 = A11*B11 + A12*B21
- *   C12 = A11*B12 + A12*B22
- *   C21 = A21*B11 + A22*B21
- *   C22 = A21*B12 + A22*B22
- * </pre>
- *
- * <p>Recursion bottoms out at sub-matrices of size ≤ {@code THRESHOLD},
- * where the classic triple-loop is used instead.
- *
- * <p>Time complexity:  O(n³) — recurrence T(n) = 8T(n/2) + O(n²).
- * <p>Space complexity: O(n² log n) due to recursive call stack and sub-matrix allocations.
- */
 public class DivideAndConquer {
 
     /** Matrix A (n × n). */
